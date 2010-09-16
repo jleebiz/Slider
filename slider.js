@@ -17,14 +17,11 @@
 		
 			// append each of the slide div to slides div
 			obj.find('.slide').css({'float' : 'left'});
-			
+			obj.append("<div style='clear: both'></div>");
 			// get slider width
 			obj.find(".slide").each(function(){
 				slider_width = slider_width + $(this).width();
-				alert(slider_width);
 			});
-			
-			
 			
 		});
 	};

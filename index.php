@@ -3,10 +3,15 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script src="slider.js"></script>
 		<script> 
-			$().ready(function(){
+			$(document).ready(function(){
 				$(".slider").slider("slide");
 			});		
 		</script>
+		<style>
+			.slide{
+				border: 1px solid green;
+			}
+		</style>
 	</head>
 
 	<body>

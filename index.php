@@ -2,20 +2,22 @@
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<script src="slider.js"></script>
+		<style>
+			.slide{
+				border: 1px solid green;
+				margin-left: 1px;
+				padding-left: 1px;
+			}
+		</style>
 		<script> 
 			$(document).ready(function(){
 				$(".slider").slider("slide");
 			});		
 		</script>
-		<style>
-			.slide{
-				border: 1px solid green;
-			}
-		</style>
 	</head>
 
 	<body>
-		<div class="slider">
+		<div id="a" class="slider">
 			<div class="slide">
 				asdf
 			</div>
@@ -26,7 +28,7 @@
 				asdf
 			</div>
 		</div>
-		<div class="slider">
+		<div id="b" class="slider">
 			<div class="slide">
 				2
 			</div>

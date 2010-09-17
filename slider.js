@@ -8,22 +8,36 @@
 		
 		var settings = $.extend(defaults, options);
 		
-		this.each(function(){
-			obj = $(this);
-			slider_width = 0;
+		var test = new Array();
+		
+		this.each(function(i){
+			test[i] = $(this);
+			slider = $(this);
+			slides_width = 0;
+			
 			// append slides div to this container
-			obj.append("<div class='slides'>");
-			obj.find(".slide").appendTo(obj.find(".slides"));
+			slider.append("<div class='slides'></div>");
+			slider.find(".slide").appendTo(slider.find(".slides"));
 		
 			// append each of the slide div to slides div
-			obj.find('.slide').css({'float' : 'left'});
-			obj.append("<div style='clear: both'></div>");
-			// get slider width
-			obj.find(".slide").each(function(){
-				slider_width = slider_width + $(this).width();
-			});
+			slider.find('.slide').css({'float' : 'left'});
+			slider.append("<div style='clear: both'></div>");
 			
+			// get and set slides div width
+			slider.find(".slide").each(function(){
+				slides_width = slides_width + $(this).width();
+			});
+			slider.find('.slides').css('width', slides_width);
+			
+			// resets border, margin, padding to 0px for consistency
+			slider.find('.slide').css('border', '0px');
+			slider.find('.slide').css('margin', '0px');
+			slider.find('.slide').css('padding', '0px');
+			
+			console.log(test);
 		});
+		
+		
 	};
-	
+	console.log(this);
 })(jQuery);

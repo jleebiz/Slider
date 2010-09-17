@@ -13,6 +13,7 @@
 		this.each(function(i){
 			test[i] = $(this);
 			slider = $(this);
+			slide_widths = new Array();
 			slides_width = 0;
 			
 			// append slides div to this container
@@ -24,7 +25,8 @@
 			slider.append("<div style='clear: both'></div>");
 			
 			// get and set slides div width
-			slider.find(".slide").each(function(){
+			slider.find(".slide").each(function(i){
+				slide_widths[i] = $(this).width();
 				slides_width = slides_width + $(this).width();
 			});
 			slider.find('.slides').css('width', slides_width);
@@ -34,10 +36,13 @@
 			slider.find('.slide').css('margin', '0px');
 			slider.find('.slide').css('padding', '0px');
 			
-			console.log(test);
+			// sets initial overflow and width settings to main slider container
+			slider.css(
+				{
+					'width' : slide_widths[0],
+					'overflow' : 'hidden'
+				}
+			);
 		});
-		
-		
 	};
-	console.log(this);
 })(jQuery);
